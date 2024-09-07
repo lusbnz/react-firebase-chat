@@ -22,23 +22,25 @@ const App = () => {
     }
   }, [fetchUserInfo])
 
-  // if (isLoading) {
-  //   return <div className="loading">Loading...</div>
-  // }
-
   return (
-    <div className='container'>
-      {!currentUser ? (
-        <Login />
-      ) : (
-        <>
-          <List />
-          {chatId && <Chat />}
-        </>
-      )
+    <>
+      {isLoading ? (
+        <div className="loading">Loading...</div>
+      ) :
+        <div className='container'>
+          {!currentUser ? (
+            <Login />
+          ) : (
+            <>
+              <List />
+              {chatId && <Chat />}
+            </>
+          )
+          }
+          <Notification />
+        </div >
       }
-      <Notification />
-    </div >
+    </>
   )
 }
 
