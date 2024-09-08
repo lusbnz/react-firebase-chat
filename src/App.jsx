@@ -24,9 +24,9 @@ const App = () => {
 
   return (
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <div className="loading">Loading...</div>
-      ) :
+      ) : */}
         <div className='container'>
           {!currentUser ? (
             <Login />
@@ -39,7 +39,7 @@ const App = () => {
           }
           <Notification />
         </div >
-      }
+      {/* } */}
     </>
   )
 }
